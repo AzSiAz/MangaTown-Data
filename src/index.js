@@ -1,18 +1,9 @@
 import bluebird from 'bluebird'
 global.Promise = bluebird
 
-import { getMangaPage } from './fetch'
-import getMetadata from './parser/MangaPage/getMetadata'
-import getChapters from './parser/MangaPage/getChapters'
+// import { searchManga, getPage } from './fetch'
+// import getMangaList from './parser/General/getMangaList'
 
-getMangaPage('the gamer').then($ => {
-    let metadata = getMetadata($)
-    let chapters = getChapters($, metadata.title)
-    console.log('Metadata')
-    console.log(metadata)
-    console.log('')
-    console.log('----------')
-    console.log('')
-    console.log('Chapter')
-    console.log(chapters)
-}).catch(console.dir)
+// searchManga('isekai', 1).then($ => {
+//     console.log(getMangaList($))
+// }).catch(console.dir)

@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/AzSiAz/MangaTown-Data#readme",
   "dependencies": {
+    "async": "^2.1.5",
     "bluebird": "^3.5.0",
     "cheerio": "^0.22.0",
     "isomorphic-fetch": "^2.2.1"

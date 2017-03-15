@@ -11,7 +11,7 @@ const sleep = (time) => new Promise((resolve) => {
 
 const getMangaPage = async (series) => {
     series = nameToUrl(series)
-    if (process.env.NODE_ENV === 'test') await sleep(150)
+    await sleep(150)
     let res = await fetch(`${series}`)
     if (res.status >= 400) {
         throw new Error("Bad response from server");
@@ -20,4 +20,37 @@ const getMangaPage = async (series) => {
     return cheerio.load(text)
 }
 
-export { getMangaPage }
+const getMangaChapterPage = async (url) => {
+    await sleep(150)
+    let res = await fetch(url)
+    if (res.status >= 400) {
+        throw new Error("Bad response from server");
+    }
+    let text = await res.text()
+    return cheerio.load(text)
+}
+
+
+const getPage = async (page = 1, addr = 'http://www.mangatown.com/latest') => {
+    await sleep(150)
+    const url = `${addr}/${page}.htm`
+    let res = await fetch(url)
+    if (res.status >= 400) {
+        throw new Error("Bad response from server");
+    }
+    let text = await res.text()
+    return cheerio.load(text)
+}
+
+const searchManga = async (title, page = 1) => {
+    await sleep(150)
+    const url = `http://www.mangatown.com/search.php?name=${title}&page=${page}`
+    let res = await fetch(url)
+    if (res.status >= 400) {
+        throw new Error("Bad response from server");
+    }
+    let text = await res.text()
+    return cheerio.load(text)
+}
+
+export { getMangaPage, getMangaChapterPage, getPage, searchManga }

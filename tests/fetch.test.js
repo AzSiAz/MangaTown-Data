@@ -1,7 +1,8 @@
-import { getMangaPage } from '../src/fetch'
+import { getMangaPage, getMangaChapterPage, getPage, searchManga } from '../src/fetch'
 
 describe('getMangaPage Test', () => {
-    test('Should return manga cheerio object for manga series name', async () => {
+
+    test('Should return cheerio object for manga series name', async () => {
         let $ = await getMangaPage('the_gamer')
         expect($).toBeDefined()
         expect($).not.toThrow()
@@ -12,7 +13,43 @@ describe('getMangaPage Test', () => {
             await getMangaPage('srejknmlxdjnkm')
         }
         catch(err) {
-            expect(err.message).toBe('Bad response from server')
+            expect(err.name).toBe('Error')
+        }
+    })
+})
+
+describe('getMangaChapterPage Test', () => {
+
+    test('Should return cheerio object for manga chapter page', async () => {
+        let $ = await getMangaChapterPage('http://www.mangatown.com/manga/the_gamer/c164/')
+        expect($).toBeDefined()
+        expect($).not.toThrow()
+    })
+
+    test('Should throw an error', async () => {
+        try {
+            await getMangaChapterPage('srejknmlxdjnkm')
+        }
+        catch(err) {
+            expect(err.name).toBe('Error')
+        }
+    })
+})
+
+describe('getPage Test', () => {
+
+    test('Should return cheerio object for page', async () => {
+        let $ = await getPage()
+        expect($).toBeDefined()
+        expect($).not.toThrow()
+    })
+
+    test('Should throw an error', async () => {
+        try {
+            await await getPage('cfgvhbjnkm')
+        }
+        catch(err) {
+            expect(err.name).toBe('Error')
         }
     })
 })
