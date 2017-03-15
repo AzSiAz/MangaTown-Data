@@ -3,7 +3,7 @@ import getBasicArrayData from '../../src/parser/getBasicArrayData'
 
 
 describe('getCover Test', () => {
-    it('Should return basic array', async () => {
+    test('Should return basic array', async () => {
         let $ = await getMangaPage('the_gamer')
 
         let element = $('.detail_info.clearfix ul > li').map((index, element) => element = $(element))[2]

@@ -2,8 +2,8 @@ import { getMangaPage } from '../../src/fetch'
 import getMetadata from '../../src/parser/getMetadata'
 
 
-describe('getMetadata Teste', () => {
-    it('Should return correct metadata format', async () => {
+describe('getMetadata Test', () => {
+    test('Should return correct metadata format', async () => {
         let $ = await getMangaPage('the_gamer')
         let metadata = getMetadata($)
         expect(metadata).not.toBeUndefined()
