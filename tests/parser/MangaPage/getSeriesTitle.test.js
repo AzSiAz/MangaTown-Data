@@ -1,5 +1,5 @@
-import { getMangaPage } from '../../src/fetch'
-import getSeriesTitle from '../../src/parser/MangaPage/getSeriesTitle'
+import { getMangaPage } from '../../../src/fetch'
+import getSeriesTitle from '../../../src/parser/MangaPage/getSeriesTitle'
 
 describe('getSeriesTitle Test', () => {
     test('Should return correct title for manga', async () => {

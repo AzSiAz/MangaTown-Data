@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch'
 import cheerio from 'cheerio'
 
-import nameToUrl from './nameToUrl'
+import nameToUrl from './parser/nameToUrl'
 
 const sleep = (time) => new Promise((resolve) => {
     setTimeout(() => {

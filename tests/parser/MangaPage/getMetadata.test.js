@@ -1,5 +1,5 @@
-import { getMangaPage } from '../../src/fetch'
-import getMetadata from '../../src/parser/MangaPage/getMetadata'
+import { getMangaPage } from '../../../src/fetch'
+import getMetadata from '../../../src/parser/MangaPage/getMetadata'
 
 
 describe('getMetadata Test', () => {
