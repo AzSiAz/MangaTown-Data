@@ -36,6 +36,24 @@ describe('getMangaChapterPage Test', () => {
     })
 })
 
+describe('searchManga Test', () => {
+
+    test('Should return cheerio object for page', async () => {
+        let $ = await getPage()
+        expect($).toBeDefined()
+        expect($).not.toThrow()
+    })
+
+    test('Should throw an error', async () => {
+        try {
+            await searchManga('cfgvhbjnkm')
+        }
+        catch(err) {
+            expect(err.name).toBe('Error')
+        }
+    })
+})
+
 describe('getPage Test', () => {
 
     test('Should return cheerio object for page', async () => {
@@ -46,7 +64,7 @@ describe('getPage Test', () => {
 
     test('Should throw an error', async () => {
         try {
-            await await getPage('cfgvhbjnkm')
+            await getPage('cfgvhbjnkm')
         }
         catch(err) {
             expect(err.name).toBe('Error')
