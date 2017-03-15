@@ -1,5 +1,5 @@
 import { getMangaPage } from '../../src/fetch'
-import getCover from '../../src/parser/getCover'
+import getCover from '../../src/parser/MangaPage/getCover'
 
 
 describe('getCover Test', () => {

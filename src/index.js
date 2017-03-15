@@ -2,8 +2,8 @@ import bluebird from 'bluebird'
 global.Promise = bluebird
 
 // import { getMangaPage } from './fetch'
-// import getMetadata from './parser/getMetadata'
-// import getChapters from './parser/getChapters'
+// import getMetadata from './parser/MangaPage/getMetadata'
+// import getChapters from './parser/MangaPage/getChapters'
 
 // getMangaPage('the gamer').then($ => {
 //     let metadata = getMetadata($)

@@ -1,5 +1,5 @@
 import { getMangaPage } from '../../src/fetch'
-import getBasicArrayData from '../../src/parser/getBasicArrayData'
+import getBasicArrayData from '../../src/parser/MangaPage/getBasicArrayData'
 
 
 describe('getCover Test', () => {
