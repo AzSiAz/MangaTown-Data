@@ -11,7 +11,8 @@
     "build": "npm run clean && mkdir -p dist && babel src -s -D -d dist",
     "test": "npm run lint && jest --coverage && cat ./coverage/lcov.info | coveralls",
     "test-w": "jest --watch",
-    "lint": "esw -w src test",
+    "lint": "esw src test",
+    "lint-w": "esw -w src test",
     "prepublish": "npm build"
   },
   "dependencies": {
