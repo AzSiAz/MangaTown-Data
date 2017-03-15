@@ -8,3 +8,5 @@ const seriesNameToUrl = (series) => {
         .replace(/__+/g, '_');      // Remove consecutive _
     return 'http://www.mangatown.com/manga/' + series + '/';
 };
+
+module.exports = seriesNameToUrl
