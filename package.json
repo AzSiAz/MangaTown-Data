@@ -1,7 +1,7 @@
 {
   "name": "mangatown-data",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
     "prestart": "npm run -s build",
@@ -15,10 +15,26 @@
     "lint-w": "esw -w src test",
     "prepublish": "npm build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AzSiAz/MangaTown-Data.git"
+  },
+  "keywords": [
+    "Mangatown",
+    "manga"
+  ],
+  "author": "AzSiAz <contact@azsiaz.tech> (azsiaz.tech)",
+  "bugs": {
+    "url": "https://github.com/AzSiAz/MangaTown-Data/issues"
+  },
+  "homepage": "https://github.com/AzSiAz/MangaTown-Data#readme",
   "dependencies": {
-    "cheerio": "^0.22.0"
+    "bluebird": "^3.5.0",
+    "cheerio": "^0.22.0",
+    "isomorphic-fetch": "^2.2.1"
   },
   "devDependencies": {
+    "@types/jest": "^19.2.2",
     "babel-cli": "^6.24.0",
     "babel-jest": "^19.0.0",
     "babel-preset-env": "^1.2.1",
@@ -55,6 +71,7 @@
       "sourceType": "module"
     },
     "env": {
+      "es6": true,
       "node": true,
       "jest": true
     },
@@ -62,7 +79,7 @@
       "eslint:recommended"
     ],
     "rules": {
-      "no-console": 2,
+      "no-console": 0,
       "jest/no-focused-tests": 2,
       "jest/no-identical-title": 2
     }
