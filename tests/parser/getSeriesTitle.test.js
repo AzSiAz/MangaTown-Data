@@ -1,7 +1,7 @@
 import { getMangaPage } from '../../src/fetch'
 import getSeriesTitle from '../../src/parser/getSeriesTitle'
 
-describe('getSeriesTitle', () => {
+describe('getSeriesTitle Teste', () => {
     it('Should return correct title for manga', async () => {
         let $ = await getMangaPage('the_gamer')
         expect($).toBeDefined()

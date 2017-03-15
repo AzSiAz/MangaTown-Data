@@ -1,10 +1,10 @@
 import fetch from 'isomorphic-fetch'
 import cheerio from 'cheerio'
 
-import correctUrl from './correctUrl'
+import nameToUrl from './nameToUrl'
 
 const getMangaPage = async (series) => {
-    series = correctUrl(series)
+    series = nameToUrl(series)
     let res = await fetch(`${series}`)
     if (res.status >= 400) {
         throw new Error("Bad response from server");
