@@ -1,9 +1,11 @@
 import bluebird from 'bluebird'
 global.Promise = bluebird
 
-// import { searchManga, getPage } from './fetch'
-// import getMangaList from './parser/General/getMangaList'
+import searchManga from './lib/searchManga'
+import getChapter from './lib/getChapter'
+import getManga from './lib/getManga'
 
-// searchManga('cfgvhbjnkm', 500).then($ => {
-//     console.log(getMangaList($))
-// }).catch(console.dir)
+export { searchManga, getChapter, getManga }
+// import getManga from './lib/getManga'
+
+// getManga('the gamer').then(console.log)

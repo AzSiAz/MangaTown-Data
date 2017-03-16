@@ -1,4 +1,4 @@
-import { getMangaPage } from '../../../src/fetch'
+import { getMangaPage } from '../../../src/lib/fetch'
 import getSeriesTitle from '../../../src/parser/MangaPage/getSeriesTitle'
 
 describe('getSeriesTitle Test', () => {

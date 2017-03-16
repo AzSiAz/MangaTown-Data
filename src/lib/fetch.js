@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch'
 import cheerio from 'cheerio'
 
-import nameToUrl from './parser/nameToUrl'
+import nameToUrl from '../parser/nameToUrl'
 
 const sleep = (time) => new Promise((resolve) => {
     setTimeout(() => {
@@ -11,7 +11,7 @@ const sleep = (time) => new Promise((resolve) => {
 
 const getMangaPage = async (series) => {
     series = nameToUrl(series)
-    await sleep(150)
+    await sleep(250)
     let res = await fetch(`${series}`)
     if (res.status >= 400) {
         throw new Error("Bad response from server");
@@ -21,7 +21,7 @@ const getMangaPage = async (series) => {
 }
 
 const getMangaChapterPage = async (url) => {
-    await sleep(150)
+    await sleep(250)
     let res = await fetch(url)
     if (res.status >= 400) {
         throw new Error("Bad response from server");
@@ -32,7 +32,7 @@ const getMangaChapterPage = async (url) => {
 
 
 const getPage = async (page = 1, addr = 'http://www.mangatown.com/latest') => {
-    await sleep(150)
+    await sleep(250)
     const url = `${addr}/${page}.htm`
     let res = await fetch(url)
     if (res.status >= 400) {
@@ -43,7 +43,7 @@ const getPage = async (page = 1, addr = 'http://www.mangatown.com/latest') => {
 }
 
 const searchManga = async (title, page = 1) => {
-    await sleep(150)
+    await sleep(250)
     const url = `http://www.mangatown.com/search.php?name=${title}&page=${page}`
     let res = await fetch(url)
     if (res.status >= 400) {

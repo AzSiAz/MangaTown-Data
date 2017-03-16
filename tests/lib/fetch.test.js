@@ -1,4 +1,4 @@
-import { getMangaPage, getMangaChapterPage, getPage, searchManga } from '../src/fetch'
+import { getMangaPage, getMangaChapterPage, getPage, searchManga } from '../../src/lib/fetch'
 
 describe('getMangaPage Test', () => {
 

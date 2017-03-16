@@ -1,4 +1,4 @@
-import { getMangaPage } from '../../../src/fetch'
+import { getMangaPage } from '../../../src/lib/fetch'
 import getBasicArrayData from '../../../src/parser/MangaPage/getBasicArrayData'
 
 

@@ -1,4 +1,4 @@
-import { getMangaPage } from '../../../src/fetch'
+import { getMangaPage } from '../../../src/lib/fetch'
 import getCover from '../../../src/parser/MangaPage/getCover'
 
 
