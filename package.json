@@ -1,6 +1,7 @@
 {
   "name": "mangatown-data",
-  "version": "1.0.2",
+  "description": "Get data from MangaTown",
+  "version": "1.0.4",
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
@@ -13,7 +14,7 @@
     "test-w": "jest --watch --runInBand",
     "lint": "esw src test",
     "lint-w": "esw -w src test",
-    "prepublish": "npm build"
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
