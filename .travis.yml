@@ -1,6 +1,5 @@
 language: node_js
 node_js:
-- '5'
 - '6'
 - '7'
 install:
@@ -14,6 +13,6 @@ deploy:
   api_key:
     secure: Mh4QPhY3Q3rZGbN9YwJU6l4BMdBuaJUK/YD5wL9M7mFwy+Qhqe+tAthOhsPKoDTF7Ltjoteq3AwWPV1qMNg4Adh+oCUk/82E8DiqE4ZuCWdvIwU9Ka6TbXO2oVSWGn/567FVRBBqaqC1Kv1a0RIIr0C36/syKwJnP0LrSuXVVT6hXX32rcVIqZWX4nhCQ5bt4pzDcdo8Yp8B/k7cPYicHba9WfAKP7hYBTLJD4PMRRO8juVK6IdZXhx7dwfq+s5dwyjGUWMCsQfi8ubRFgOI+TGM+CxYDzUeQqtIH3rlsVRqxcDcmSG9D4TrBGKgploM1oPu6ISqiwjJPnM6U3+PMC5fnmbJqYun7QyyD26Aie5ROYJux8YScHLk7KoQVQB01gDgw22kv9sB3UtJY0pmAbcq7QcB2R1hv+eaqIfgM/U7PkoZi3ozaiJ5tbUqkjpxV4oqpFO6quyy0rvKM0DRhbpAsyP1jtb8jJPoBswT7KhId7Unpap8jQ7I7OTEHiH1iPHcIFMmajrEEjppHZFXwaNTy5l5nbw8l+UaMF6KcaUM820919LRVCK1To9aaUreZOhIstuRDzcE1QUJcIyOpxeugPc1yas9ET4Hw6Mg29cBb6FqzUnUfm2xe1SIuBIR1CpZdxdjdeynlEHhJMv3aLOB8yZQgsZrF163q9OJdpU=
   on:
-    node: '5'
+    node: '6'
     tags: true
     repo: AzSiAz/MangaTown-Data

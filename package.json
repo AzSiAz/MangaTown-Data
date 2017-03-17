@@ -4,6 +4,10 @@
   "version": "1.1.1",
   "main": "dist/index.js",
   "license": "MIT",
+  "engines": {
+    "node": "~6.9.1",
+    "npm": ">=3.10.0"
+  },
   "scripts": {
     "prestart": "npm run -s build",
     "start": "node dist/index.js",
@@ -57,8 +61,9 @@
         "env",
         {
           "targets": {
-            "node": "5"
-          }
+            "node": 6
+          },
+          "useBuiltIns": true
         }
       ]
     ]
