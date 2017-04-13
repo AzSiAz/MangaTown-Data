@@ -10,6 +10,5 @@ import getImageUrl from './lib/getImageUrl'
 import getPage from './lib/fetch'
 
 export { searchManga, getChapter, getManga, getPage, getLatest, getHot, getImageUrl }
-// import getManga from './lib/getManga'
 
-// getManga('the gamer').then(console.log)
+// getLatest().then(console.log)
