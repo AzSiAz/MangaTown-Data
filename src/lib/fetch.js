@@ -42,6 +42,16 @@ const getPage = async (page = 1, addr = 'http://www.mangatown.com/latest') => {
     return cheerio.load(text)
 }
 
+const getPageMangaList = async (url) => {
+    await sleep(250)
+    let res = await fetch(url)
+    if (res.status >= 400) {
+        throw new Error("Bad response from server");
+    }
+    let text = await res.text()
+    return cheerio.load(text)
+}
+
 const searchManga = async (title, page = 1) => {
     await sleep(250)
     const url = `http://www.mangatown.com/search.php?name=${title}&page=${page}`
@@ -53,4 +63,4 @@ const searchManga = async (title, page = 1) => {
     return cheerio.load(text)
 }
 
-export { getMangaPage, getMangaChapterPage, getPage, searchManga }
+export { getMangaPage, getMangaChapterPage, getPage, searchManga, getPageMangaList }

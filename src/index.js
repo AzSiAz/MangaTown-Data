@@ -6,9 +6,10 @@ import getChapter from './lib/getChapter'
 import getManga from './lib/getManga'
 import getLatest from './lib/getLatest'
 import getHot from './lib/getHot'
+import getMangaList from './lib/getMangaList'
 import getImageUrl from './lib/getImageUrl'
 import getPage from './lib/fetch'
 
-export { searchManga, getChapter, getManga, getPage, getLatest, getHot, getImageUrl }
+export { searchManga, getChapter, getManga, getPage, getLatest, getHot, getImageUrl, getMangaList }
 
-// getLatest().then(console.log)
+getMangaList().then(console.log)
