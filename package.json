@@ -1,7 +1,7 @@
 {
   "name": "mangatown-data",
   "description": "Get data from MangaTown",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "main": "dist/index.js",
   "license": "MIT",
   "engines": {
