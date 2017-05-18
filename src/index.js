@@ -12,4 +12,4 @@ import getPage from './lib/fetch'
 
 export { searchManga, getChapter, getManga, getPage, getLatest, getHot, getImageUrl, getMangaList }
 
-getMangaList().then(console.log)
+// getMangaList().then(console.log)
