@@ -1,15 +1,26 @@
-import { getMangaPage } from './fetch'
-import getChapters from '../parser/MangaPage/getChapters'
-import getMetadata from '../parser/MangaPage/getMetadata'
+const { getMangaPage } = require('./fetch')
+const getChapters = require('../parser/MangaPage/getChapters')
+const getMetadata = require('../parser/MangaPage/getMetadata')
 
-const getManga = (title) => new Promise((resolve, reject) => {
-    getMangaPage(title)
-        .then($ => {
-            let data = getMetadata($)
-            data.chapters = getChapters($, data.title)
-            resolve(data)
-        })
-        .catch(err => reject(err))
-})
 
-export default getManga
+/**
+ * @typedef {import('./../parser/MangaPage/getMetadata').Metadata} Meta
+ * 
+ * @typedef ChapterList
+ * @property {import('./../parser/MangaPage/getChapters').Chapters} chapters
+ * 
+ * @typedef {Meta & ChapterList} Manga
+ *
+ * @param {string} title
+ * @returns {Promise<Manga>}
+ */
+module.exports = async (title) => {
+    const $ = await getMangaPage(title)
+
+    const metadata = getMetadata($)
+
+    return {
+        chapters: getChapters($, metadata.title),
+        ...metadata
+    }
+}

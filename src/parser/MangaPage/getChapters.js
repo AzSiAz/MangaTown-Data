@@ -1,6 +1,21 @@
-import convertTitle from '../convertTitle'
+const convertTitle = require('../convertTitle')
 
-const getChapers = ($, title) => {
+/**
+ * @typedef Chapter
+ * @property {number} chapter
+ * @property {string} url
+ * @property {string} seriesTitle
+ * 
+ * @typedef {Chapter[]} Chapters
+ * 
+ * @exports Chapters
+ * 
+ * 
+ * @param {CheerioStatic} $
+ * @param {string} title
+ * @returns {Chapter[]}
+ */
+module.exports = ($, title) => {
     if (!title) throw new Error('No title passed')
     return $('.chapter_list li a').map(function(i, e) {
         let parsedTitle = convertTitle(title)
@@ -12,5 +27,3 @@ const getChapers = ($, title) => {
         };
     }).get()
 }
-
-export default getChapers

@@ -1,11 +1,16 @@
-import { getMangaChapterPage } from './fetch'
-import getUrl from '../parser/Reader/getImageUrl'
+const { getMangaChapterPage } = require('./fetch')
+const getImageFromUrl = require('../parser/Reader/getImageUrl')
 
-const getImageUrl = (url) => new Promise((resolve, reject) => {
-    getMangaChapterPage(url)
-        .then($ => getUrl($))
-        .then(url => resolve({imageUrl: url}))
-        .catch(err => reject(err))
-})
+/**
+ * Get direct image url from a reader? page
+ * @param {string} url 
+ * @returns {Promise<{imageUrl: string}>}
+ */
+module.exports = async (url) => {
+    const $ = await getMangaChapterPage(url)
+    url = await getImageFromUrl($)
 
-export default getImageUrl
+    return {
+        imageUrl: url,
+    }
+}

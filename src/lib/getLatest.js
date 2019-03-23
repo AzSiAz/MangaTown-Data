@@ -1,11 +1,12 @@
-import { getPage } from './fetch'
-import getMangaList from '../parser/General/getMangaList'
+const { getPage } = require('./fetch')
+const getMangaList = require('../parser/General/getMangaList')
 
-const getLatest = (page = 1) => new Promise((resolve, reject) => {
-    getPage(page, 'http://www.mangatown.com/latest')
-        .then($ => getMangaList($))
-        .then(data => resolve(data))
-        .catch(err => reject(err))
-})
+/**
+ * @param {number} [page=1]
+ * @returns {Promise<import('./../parser/General/getMangaList').MangaList>}
+ */
+module.exports = async (page = 1) => {
+    const $ = await getPage(page, 'http://www.mangatown.com/latest')
 
-export default getLatest
+    return getMangaList($)
+}

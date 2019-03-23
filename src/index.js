@@ -1,15 +1,21 @@
-import bluebird from 'bluebird'
-global.Promise = bluebird
+const searchManga = require('./lib/searchManga')
+const getChapter = require('./lib/getChapter')
+const getManga = require('./lib/getManga')
+const getLatest = require('./lib/getLatest')
+const getHot = require('./lib/getHot')
+const getList = require('./lib/getList')
+const getImageUrl = require('./lib/getImageUrl')
+const { getPage } = require('./lib/fetch')
 
-import searchManga from './lib/searchManga'
-import getChapter from './lib/getChapter'
-import getManga from './lib/getManga'
-import getLatest from './lib/getLatest'
-import getHot from './lib/getHot'
-import getList from './lib/getList'
-import getImageUrl from './lib/getImageUrl'
-import getPage from './lib/fetch'
+module.exports = {
+    searchManga,
+    getChapter,
+    getManga,
+    getPage,
+    getLatest,
+    getHot,
+    getImageUrl,
+    getList
+}
 
-export { searchManga, getChapter, getManga, getPage, getLatest, getHot, getImageUrl, getList }
-
-getList().then(console.log)
+// getList().then(console.log)

@@ -1,26 +1,43 @@
-import parseDate from './parseDate'
-import paginationParser from './paginationParser'
+// @ts-check
+const parseDate = require('./parseDate')
+const paginationParser = require('./paginationParser')
 
-const getMangaList = ($) => {
+/**
+ * @typedef SmallManga
+ * @property {string} title
+ * @property {string} url
+ * @property {string} cover
+ * @property {string} date
+ * @property {number} chapter
+ * @exports SmallManga
+ * 
+ * @typedef MangaList
+ * @property {SmallManga[]} data
+ * @property {import('./paginationParser').Pagination} page
+ * @exports MangaList
+ * 
+ * Get list of manga from page where there is multiple manga like latest page
+ * @param {CheerioStatic} $
+ * @returns {MangaList}
+ */
+module.exports = ($) => {
     return {
         page: paginationParser($),
         data: $('.main .manga_pic_list li')
-            .map((index, element) => {
-                element = $(element)
-                let title = element.children('.title').children()
+            .map((_, element) => {
+                let el = $(element)
+                let title = el.children('.title').children()
                     .first().attr('title')
-                let chapter = parseFloat(element.children('.new_chapter')
+                let chapter = parseFloat(el.children('.new_chapter')
                     .children('a').attr('title').replace(title, ''))
                 return {
                     title: title,
-                    url: element.children('.title').children().first().attr('href'),
-                    cover: element.children('.manga_cover').children('img').attr('src'),
+                    url: el.children('.title').children().first().attr('href'),
+                    cover: el.children('.manga_cover').children('img').attr('src'),
                     chapter: chapter,
-                    date: parseDate(element.children().last().text().trim())
+                    date: parseDate(el.children().last().text().trim())
                 }
             })
             .get()
     }
 }
-
-export default getMangaList

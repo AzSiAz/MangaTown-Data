@@ -1,18 +1,37 @@
-import getTitle from './getSeriesTitle'
-import getBasicArrayData from './getBasicArrayData'
-import getCover from './getCover'
+const getTitle = require('./getSeriesTitle')
+const getBasicArrayData = require('./getBasicArrayData')
+const getCover = require('./getCover')
 
-const getMetadata = ($) => {
+/**
+ * @typedef Metadata
+ * @property {string} title
+ * @property {string} cover
+ * @property {string[]} alternateName
+ * @property {string} status
+ * @property {string} rank
+ * @property {string} summary
+ * @property {import('./getBasicArrayData').BasicData[]} demographic
+ * @property {import('./getBasicArrayData').BasicData[]} genre
+ * @property {import('./getBasicArrayData').BasicData[]} author
+ * @property {import('./getBasicArrayData').BasicData[]} artist
+ * @property {import('./getBasicArrayData').BasicData[]} type
+ * 
+ * 
+ * @param {CheerioStatic} $ 
+ * @returns {Metadata}
+ */
+module.exports = ($) => {
+    /** @type {Metadata} metadata */
     let metadata = {}
     metadata.title = getTitle($)
     metadata.cover = getCover($)
     $('.detail_info.clearfix ul > li').map((index, element) => {
-        let swichText = $(element).children().first().text().trim()
-        element = $(element)
-        // console.log(swichText)
+        let el = $(element)
+        let swichText = el.children().first().text().trim()
+
         switch(swichText) {
             case 'Alternative Name:':
-                metadata.alternateName = element.text().trim()
+                metadata.alternateName = el.text().trim()
                     .replace(swichText, '').split(';').map(val => val.trim())
                 break
             case 'Demographic:':
@@ -28,18 +47,18 @@ const getMetadata = ($) => {
                 metadata.artist = getBasicArrayData(element, $)
                 break
             case 'Status(s):':
-                metadata.status = element.text().trim()
+                metadata.status = el.text().trim()
                     .replace(swichText, '')
                 break
             case 'Rank:':
-                metadata.rank = element.text().trim()
+                metadata.rank = el.text().trim()
                     .replace(swichText, '')
                 break
             case 'Type:':
                 metadata.type = getBasicArrayData(element, $)
                 break
             case 'Summary:':
-                metadata.summary = element.children('#show').text()
+                metadata.summary = el.children('#show').text()
                     .trim().slice(0, -4).trim()
                 break;
             case 'Bookmark':
@@ -52,7 +71,6 @@ const getMetadata = ($) => {
         }
         // console.log('-----------')
     })
+
     return metadata;
 }
-
-export default getMetadata
