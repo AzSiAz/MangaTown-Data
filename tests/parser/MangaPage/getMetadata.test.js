@@ -1,5 +1,5 @@
-import { getMangaPage } from '../../../src/lib/fetch'
-import getMetadata from '../../../src/parser/MangaPage/getMetadata'
+const { getMangaPage } = require('../../../src/lib/fetch')
+const getMetadata = require('../../../src/parser/MangaPage/getMetadata')
 
 
 describe('getMetadata Test', () => {

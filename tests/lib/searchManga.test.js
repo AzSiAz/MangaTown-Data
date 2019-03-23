@@ -1,8 +1,9 @@
-import { searchManga } from '../../src'
+const { searchManga } = require('../../src')
 
 describe('getChapter Test', () => {
     test('Should get an url list of page in Chapter', async () => {
-        let data = await searchManga('isekai')
+        let { data } = await searchManga('isekai')
+
         expect(data).toBeDefined()
         expect(typeof data).toBe('object')
         expect(data[0]).toHaveProperty('url')

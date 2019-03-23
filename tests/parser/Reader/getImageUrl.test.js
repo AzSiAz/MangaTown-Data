@@ -1,5 +1,5 @@
-import { getMangaChapterPage } from '../../../src/lib/fetch'
-import getImageUrl from '../../../src/parser/Reader/getImageUrl'
+const { getMangaChapterPage } = require('../../../src/lib/fetch')
+const getImageUrl = require('../../../src/parser/Reader/getImageUrl')
 
 
 describe('getImageUrl Test', () => {

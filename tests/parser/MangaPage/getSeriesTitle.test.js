@@ -1,5 +1,5 @@
-import { getMangaPage } from '../../../src/lib/fetch'
-import getSeriesTitle from '../../../src/parser/MangaPage/getSeriesTitle'
+const { getMangaPage } = require('../../../src/lib/fetch')
+const getSeriesTitle = require('../../../src/parser/MangaPage/getSeriesTitle')
 
 describe('getSeriesTitle Test', () => {
     test('Should return correct title for manga', async () => {

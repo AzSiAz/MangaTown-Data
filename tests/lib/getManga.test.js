@@ -1,4 +1,4 @@
-import { getManga } from '../../src'
+const { getManga } = require('../../src')
 
 describe('getManga Test', () => {
     test('Should get a manga data', async () => {

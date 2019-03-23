@@ -1,11 +1,12 @@
-import { getMangaPage } from '../../../src/lib/fetch'
-import getChapters from '../../../src/parser/MangaPage/getChapters'
+const { getMangaPage } = require('../../../src/lib/fetch')
+const getChapters = require('../../../src/parser/MangaPage/getChapters')
 
 
 describe('getCover Test', () => {
     test('Should not return chapters Array', async () => {
         try {
             let $ = await getMangaPage('the_gamer')
+            // @ts-ignore
             getChapters($)
         }
         catch(err) {

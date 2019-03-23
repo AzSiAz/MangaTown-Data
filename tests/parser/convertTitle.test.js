@@ -1,4 +1,4 @@
-import convertTitle from '../../src/parser/convertTitle'
+const convertTitle = require('../../src/parser/convertTitle')
 
 describe('correctUrl Test', () => {
     test('Should return correct title for manga', async () => {

@@ -1,4 +1,4 @@
-import { getChapter } from '../../src'
+const { getChapter } = require('../../src')
 
 describe('getChapter Test', () => {
     test('Should get an url list of page in Chapter', async () => {
@@ -10,4 +10,3 @@ describe('getChapter Test', () => {
         expect(data[1]).toHaveProperty('url')
     })
 })
-

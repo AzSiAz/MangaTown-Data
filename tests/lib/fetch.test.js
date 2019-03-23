@@ -1,4 +1,4 @@
-import { getMangaPage, getMangaChapterPage, getPage, searchManga } from '../../src/lib/fetch'
+const { getMangaPage, getMangaChapterPage, getPage, searchManga } = require('../../src/lib/fetch')
 
 describe('getMangaPage Test', () => {
 
@@ -64,6 +64,7 @@ describe('getPage Test', () => {
 
     test('Should throw an error', async () => {
         try {
+            // @ts-ignore
             await getPage('cfgvhbjnkm')
         }
         catch(err) {

@@ -1,4 +1,4 @@
-import nameToUrl from '../../src/parser/nameToUrl'
+const nameToUrl = require('../../src/parser/nameToUrl')
 
 describe('correctUrl Test', () => {
     test('Should return correct url for manga', async () => {

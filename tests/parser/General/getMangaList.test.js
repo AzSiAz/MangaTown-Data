@@ -1,11 +1,11 @@
-import { getPage } from '../../../src/lib/fetch'
-import getMangaList from '../../../src/parser/General/getMangaList'
+const { getPage } = require('../../../src/lib/fetch')
+const getMangaList = require('../../../src/parser/General/getMangaList')
 
 
 describe('getMangaList Test', () => {
     test('Should return manga list from page', async () => {
         let $ = await getPage()
-        let data = getMangaList($)
+        let { data } = getMangaList($)
         expect(data).not.toBeUndefined()
         expect(typeof data).toBe('object')
         expect(data[0]).toHaveProperty('title')

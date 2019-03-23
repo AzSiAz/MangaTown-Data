@@ -1,8 +1,8 @@
-import { getLatest } from '../../src'
+const { getLatest } = require('../../src')
 
 describe('getChapter Test', () => {
     test('Should get an url list of page in Chapter', async () => {
-        let data = await getLatest()
+        let { data } = await getLatest()
         expect(data).toBeDefined()
         expect(typeof data).toBe('object')
         expect(data[0]).toHaveProperty('url')

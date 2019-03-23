@@ -1,5 +1,5 @@
-import { getPageMangaList } from './fetch'
-import getMangaList from '../parser/General/getMangaList'
+const { getPageMangaList } = require('./fetch')
+const getMangaList = require('../parser/General/getMangaList')
 
 /**
  * @param {number} [page=1] 

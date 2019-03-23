@@ -65,7 +65,7 @@ const getPage = async (page = 1, addr = 'http://www.mangatown.com/latest') => {
 }
 
 /**
- * return parsed html of manga page
+ * return parsed html of manga page list
  * @param {string} url 
  * @returns {Promise<CheerioStatic>}
  */

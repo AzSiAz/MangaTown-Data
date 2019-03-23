@@ -1,5 +1,5 @@
-import { getMangaPage } from '../../../src/lib/fetch'
-import getCover from '../../../src/parser/MangaPage/getCover'
+const { getMangaPage } = require('../../../src/lib/fetch')
+const getCover = require('../../../src/parser/MangaPage/getCover')
 
 
 describe('getCover Test', () => {

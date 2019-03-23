@@ -1,4 +1,4 @@
-import parseDate from '../../../src/parser/General/parseDate'
+const parseDate = require('../../../src/parser/General/parseDate')
 
 describe('correctUrl Test', () => {
     test('Should return date', async () => {
