@@ -9,7 +9,7 @@
     "npm": ">=3.10.0"
   },
   "scripts": {
-    "test": "npm run lint && jest --coverage --runInBand && cat ./coverage/lcov.info | coveralls",
+    "test": "npm run lint && jest --runInBand",
     "test-w": "jest --watch --runInBand",
     "lint": "esw src tests",
     "lint-w": "esw -w src tests"
@@ -34,7 +34,6 @@
   },
   "devDependencies": {
     "@types/jest": "24.0.11",
-    "coveralls": "3.0.3",
     "eslint": "5.15.3",
     "eslint-plugin-import": "2.16.0",
     "eslint-plugin-jest": "22.4.1",
