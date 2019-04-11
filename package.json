@@ -5,11 +5,11 @@
   "main": "src/index.js",
   "license": "MIT",
   "engines": {
-    "node": ">=6.0.0",
+    "node": ">=10.0.0",
     "npm": ">=3.10.0"
   },
   "scripts": {
-    "test": "npm run lint && jest --runInBand",
+    "test": "npm run lint && jest --coverage --runInBand",
     "test-w": "jest --watch --runInBand",
     "lint": "esw src tests",
     "lint-w": "esw -w src tests"
@@ -38,8 +38,7 @@
     "eslint-plugin-import": "2.16.0",
     "eslint-plugin-jest": "22.4.1",
     "eslint-watch": "5.0.1",
-    "jest": "24.5.0",
-    "rimraf": "2.6.3"
+    "jest": "24.5.0"
   },
   "eslintConfig": {
     "plugins": [

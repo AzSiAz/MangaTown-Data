@@ -22,3 +22,11 @@ steps:
     - success
     event:
     - tag
+
+- name: coveralls
+  image: lizheming/drone-coveralls
+  settings:
+    token:
+      from_secret: coveralls_token
+    files:
+    - ./coverage/lcov.info
