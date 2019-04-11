@@ -9,8 +9,8 @@
     "npm": ">=3.10.0"
   },
   "scripts": {
-    "test": "npm run lint && jest --coverage --runInBand",
-    "test-w": "jest --watch --runInBand",
+    "test": "NODE_ENV=test npm run lint && jest --coverage --runInBand",
+    "test-w": "NODE_ENV=test jest --watch --runInBand",
     "lint": "esw src tests",
     "lint-w": "esw -w src tests"
   },

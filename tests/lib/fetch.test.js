@@ -6,16 +6,16 @@ describe('getMangaPage Test', () => {
         let $ = await getMangaPage('the_gamer')
         expect($).toBeDefined()
         expect($).not.toThrow()
-    })
+    }, 10000000)
 
     test('Should throw an error', async () => {
         try {
             await getMangaPage('srejknmlxdjnkm')
         }
-        catch(err) {
+        catch (err) {
             expect(err.name).toBe('Error')
         }
-    })
+    }, 10000000)
 })
 
 describe('getMangaChapterPage Test', () => {
@@ -24,16 +24,16 @@ describe('getMangaChapterPage Test', () => {
         let $ = await getMangaChapterPage('http://www.mangatown.com/manga/the_gamer/c164/')
         expect($).toBeDefined()
         expect($).not.toThrow()
-    })
+    }, 10000000)
 
     test('Should throw an error', async () => {
         try {
             await getMangaChapterPage('srejknmlxdjnkm')
         }
-        catch(err) {
+        catch (err) {
             expect(err.name).toBe('Error')
         }
-    })
+    }, 10000000)
 })
 
 describe('searchManga Test', () => {
@@ -42,16 +42,16 @@ describe('searchManga Test', () => {
         let $ = await getPage()
         expect($).toBeDefined()
         expect($).not.toThrow()
-    })
+    }, 10000000)
 
     test('Should throw an error', async () => {
         try {
             await searchManga('cfgvhbjnkm')
         }
-        catch(err) {
+        catch (err) {
             expect(err.name).toBe('Error')
         }
-    })
+    }, 10000000)
 })
 
 describe('getPage Test', () => {
@@ -60,15 +60,15 @@ describe('getPage Test', () => {
         let $ = await getPage()
         expect($).toBeDefined()
         expect($).not.toThrow()
-    })
+    }, 10000000)
 
     test('Should throw an error', async () => {
         try {
             // @ts-ignore
             await getPage('cfgvhbjnkm')
         }
-        catch(err) {
+        catch (err) {
             expect(err.name).toBe('Error')
         }
-    })
+    }, 10000000)
 })

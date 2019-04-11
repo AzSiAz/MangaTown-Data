@@ -21,8 +21,9 @@ const sleep = (time) => new Promise((resolve) => {
  * @returns {Promise<CheerioStatic>}
  */
 const getMangaPage = async (seriesName) => {
+    if (process.env.NODE_ENV === "test") await sleep(1000)
+
     let name = nameToUrl(seriesName)
-    await sleep(250)
     let res = await fetch(`${name}`)
     if (res.status >= 400) {
         throw new Error("Bad response from server");
@@ -37,7 +38,8 @@ const getMangaPage = async (seriesName) => {
  * @returns {Promise<CheerioStatic>}
  */
 const getMangaChapterPage = async (url) => {
-    await sleep(250)
+    if (process.env.NODE_ENV === "test") await sleep(1000)
+
     let res = await fetch(url)
     if (res.status >= 400) {
         throw new Error("Bad response from server");
@@ -54,7 +56,8 @@ const getMangaChapterPage = async (url) => {
  * @returns {Promise<CheerioStatic>}
  */
 const getPage = async (page = 1, addr = 'http://www.mangatown.com/latest') => {
-    await sleep(250)
+    if (process.env.NODE_ENV === "test") await sleep(1000)
+
     const url = `${addr}/${page}.htm`
     let res = await fetch(url)
     if (res.status >= 400) {
@@ -70,7 +73,8 @@ const getPage = async (page = 1, addr = 'http://www.mangatown.com/latest') => {
  * @returns {Promise<CheerioStatic>}
  */
 const getPageMangaList = async (url) => {
-    await sleep(250)
+    if (process.env.NODE_ENV === "test") await sleep(1000)
+
     let res = await fetch(url)
     if (res.status >= 400) {
         throw new Error("Bad response from server");
@@ -86,7 +90,8 @@ const getPageMangaList = async (url) => {
  * @returns {Promise<CheerioStatic>}
  */
 const searchManga = async (title, page = 1) => {
-    await sleep(250)
+    if (process.env.NODE_ENV === "test") await sleep(1000)
+
     const url = `http://www.mangatown.com/search.php?name=${title}&page=${page}`
     let res = await fetch(url)
     if (res.status >= 400) {

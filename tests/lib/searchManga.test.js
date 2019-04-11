@@ -11,6 +11,6 @@ describe('getChapter Test', () => {
         expect(data[0]).toHaveProperty('cover')
         expect(data[0]).toHaveProperty('date')
         expect(data[0]).toHaveProperty('title')
-    })
+    }, 10000000)
 })
 
